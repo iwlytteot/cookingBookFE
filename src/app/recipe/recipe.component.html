@@ -1,7 +1,7 @@
 <p-dataView #dv [value]="recipes" [paginator]="true" [rows]="9" layout="grid">
   <ng-template let-product pTemplate="gridItem">
     <div class="col-12 md:col-4">
-      <div class="product-grid-item card">
+      <div class="product-grid-item card" (click)="showInstructions(product.instructions)">
         <div class="product-grid-item-top">
           <div>
             <i class="pi pi-user product-category-icon"></i>

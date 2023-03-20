@@ -1,4 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
+import {DynamicDialogConfig} from "primeng/dynamicdialog";
 
 @Component({
   selector: 'app-recipe-instructions',
@@ -7,6 +8,9 @@ import {Component, Input} from '@angular/core';
 })
 export class RecipeInstructionsComponent {
 
-  @Input() instructions = [] as string[];
+  constructor(public dialogConfig: DynamicDialogConfig) {
+    this.instructions = dialogConfig.data
+  }
 
+  instructions = [] as string[];
 }

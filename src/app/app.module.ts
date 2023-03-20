@@ -11,6 +11,8 @@ import { RecipeComponent } from './recipe/recipe.component';
 
 import {DataViewModule} from 'primeng/dataview';
 import {TimelineModule} from 'primeng/timeline';
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {TimelineModule} from 'primeng/timeline';
     AppRoutingModule,
     HttpClientModule,
     DataViewModule,
-    TimelineModule
+    TimelineModule,
+    DynamicDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
