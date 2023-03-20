@@ -6,22 +6,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeServiceComponent } from './recipe-service/recipe-service.component';
 import { IngredientServiceComponent } from './ingredient-service/ingredient-service.component';
+import { RecipeInstructionsComponent } from './recipe/recipe-instructions/recipe-instructions.component';
 import { RecipeComponent } from './recipe/recipe.component';
 
 import {DataViewModule} from 'primeng/dataview';
+import {TimelineModule} from 'primeng/timeline';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeServiceComponent,
     IngredientServiceComponent,
-    RecipeComponent
+    RecipeComponent,
+    RecipeInstructionsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DataViewModule
+    DataViewModule,
+    TimelineModule
   ],
   providers: [],
   bootstrap: [AppComponent]
