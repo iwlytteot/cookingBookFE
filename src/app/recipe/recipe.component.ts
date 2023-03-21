@@ -23,14 +23,14 @@ export class RecipeComponent implements OnInit, OnDestroy {
     });
   }
 
-  showInstructions(instructions: string[]) {
+  showInstructions(recipe: Recipe) {
     this.ref = this.dialogService.open(RecipeInstructionsComponent, {
       header: 'Instructions',
       width: '70%',
       contentStyle: {"overflow": "auto"},
       baseZIndex: 10000,
       maximizable: true,
-      data: instructions,
+      data: recipe,
       dismissableMask: true
     })
   }
