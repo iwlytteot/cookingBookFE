@@ -30,7 +30,8 @@ export class RecipeComponent implements OnInit, OnDestroy {
       contentStyle: {"overflow": "auto"},
       baseZIndex: 10000,
       maximizable: true,
-      data: instructions
+      data: instructions,
+      dismissableMask: true
     })
   }
 
