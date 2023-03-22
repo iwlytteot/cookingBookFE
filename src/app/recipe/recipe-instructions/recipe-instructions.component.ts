@@ -16,7 +16,7 @@ export class RecipeInstructionsComponent implements OnInit {
   }
 
   recipe = {} as Recipe;
-  recipeIngredients = {} as IngredientWithCount[];
+  recipeIngredients = [] as IngredientWithCount[];
 
   ngOnInit(): void {
     this.recipeService.getRecipeIngredients(this.recipe.id).subscribe((data) => {
