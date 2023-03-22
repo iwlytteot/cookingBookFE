@@ -25,7 +25,7 @@ export class RecipeComponent implements OnInit, OnDestroy {
 
   showInstructions(recipe: Recipe) {
     this.ref = this.dialogService.open(RecipeInstructionsComponent, {
-      header: 'Instructions',
+      header: recipe.name,
       width: '70%',
       contentStyle: {"overflow": "auto"},
       baseZIndex: 10000,
