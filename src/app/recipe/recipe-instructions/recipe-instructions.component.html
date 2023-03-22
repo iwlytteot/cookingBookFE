@@ -1,6 +1,26 @@
 <div class="instructions-image-preview">
     <img [src]="'https://drive.google.com/uc?id=' + recipe.imageId" [alt]="recipe.name"/>
 </div>
+
+<div class="instructions-ingredients">
+    <p-table [value]="recipeIngredients" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Weight</th>
+                <th>Amount</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.ingredient.name}}</td>
+                <td>{{product.ingredient.weight}}g</td>
+                <td>{{product.count}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
 <p-timeline [value]="recipe.instructions" align="alternate">
     <ng-template pTemplate="content" let-instruction>
         {{instruction}}

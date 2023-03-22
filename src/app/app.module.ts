@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,8 @@ import { RecipeComponent } from './recipe/recipe.component';
 import {DataViewModule} from 'primeng/dataview';
 import {TimelineModule} from 'primeng/timeline';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {TableModule} from 'primeng/table';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     DataViewModule,
     TimelineModule,
     DynamicDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
