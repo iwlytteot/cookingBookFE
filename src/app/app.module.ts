@@ -14,6 +14,7 @@ import {DataViewModule} from 'primeng/dataview';
 import {TimelineModule} from 'primeng/timeline';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {TableModule} from 'primeng/table';
+import {DividerModule} from 'primeng/divider';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {TableModule} from 'primeng/table';
     TimelineModule,
     DynamicDialogModule,
     BrowserAnimationsModule,
-    TableModule
+    TableModule,
+    DividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

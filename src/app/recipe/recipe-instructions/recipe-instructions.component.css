@@ -11,5 +11,15 @@ img {
 }
 
 .instructions-ingredients {
+    padding-top: 1rem;
     padding-bottom: 5rem;
+}
+
+.p-tag.p-tag-warning {
+    background-color: #FBC02D;
+    color: #ffffff;
+}
+
+.instructions-list {
+    padding-top: 1rem;
 }

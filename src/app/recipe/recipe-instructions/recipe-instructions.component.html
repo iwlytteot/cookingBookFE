@@ -2,8 +2,12 @@
     <img [src]="'https://drive.google.com/uc?id=' + recipe.imageId" [alt]="recipe.name"/>
 </div>
 
+<p-divider align="center">
+    <span class="p-tag p-tag-warning">Ingredients</span>
+</p-divider>
+
 <div class="instructions-ingredients">
-    <p-table [value]="recipeIngredients" [tableStyle]="{'min-width': '50rem'}">
+    <p-table [value]="recipeIngredients" styleClass="p-datatable-sm" [tableStyle]="{'min-width': '50rem'}">
         <ng-template pTemplate="header">
             <tr>
                 <th>Name</th>
@@ -13,7 +17,7 @@
         </ng-template>
         <ng-template pTemplate="body" let-product>
             <tr>
-                <td>{{product.ingredient.name}}</td>
+                <td><b>{{product.ingredient.name}}</b></td>
                 <td>{{product.ingredient.weight}}g</td>
                 <td>{{product.count}}</td>
             </tr>
@@ -21,8 +25,14 @@
     </p-table>
 </div>
 
-<p-timeline [value]="recipe.instructions" align="alternate">
-    <ng-template pTemplate="content" let-instruction>
-        {{instruction}}
-    </ng-template>
-</p-timeline>
+<p-divider align="center">
+    <span class="p-tag p-tag-success">Instructions</span>
+</p-divider>
+
+<div class="instructions-list">
+    <p-timeline [value]="recipe.instructions" align="alternate">
+        <ng-template pTemplate="content" let-instruction>
+            {{instruction}}
+        </ng-template>
+    </p-timeline>
+</div>
