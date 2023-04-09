@@ -15,8 +15,12 @@ import {TimelineModule} from 'primeng/timeline';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {TableModule} from 'primeng/table';
 import {DividerModule} from 'primeng/divider';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {AddRecipeFormComponent} from './recipe/add-recipe-form/add-recipe-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RecipeServiceComponent,
     IngredientServiceComponent,
     RecipeComponent,
-    RecipeInstructionsComponent
+    RecipeInstructionsComponent,
+    AddRecipeFormComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     TableModule,
     DividerModule,
-    NgbModule
+    NgbModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
