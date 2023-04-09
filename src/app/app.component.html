@@ -1,1 +1,16 @@
-<app-recipe></app-recipe>
+<ul ngbNav #nav="ngbNav" class="nav-tabs" [destroyOnHide]="false" [activeId]="2">
+    <li [ngbNavItem]="1">
+        <a ngbNavLink>Add new recipe</a>
+        <ng-template ngbNavContent>
+            Add new recipe
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+        <a ngbNavLink>See all recipes</a>
+        <ng-template ngbNavContent>
+            <app-recipe></app-recipe>
+        </ng-template>
+    </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

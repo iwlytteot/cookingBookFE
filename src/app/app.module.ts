@@ -16,6 +16,7 @@ import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {TableModule} from 'primeng/table';
 import {DividerModule} from 'primeng/divider';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {DividerModule} from 'primeng/divider';
     DynamicDialogModule,
     BrowserAnimationsModule,
     TableModule,
-    DividerModule
+    DividerModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
