@@ -14,11 +14,7 @@ export class IngredientServiceComponent {
 
   constructor(private http: HttpClient) {}
 
-  ingredients = {} as Ingredient[];
-
   getIngredients() {
-    this.http.get<Ingredient[]>('http://localhost:8080/ingredient').subscribe((data) => {
-      this.ingredients = data;
-    });
+    return this.http.get<Ingredient[]>('http://localhost:8080/ingredient');
   }
 }
