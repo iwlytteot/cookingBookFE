@@ -46,6 +46,12 @@
                 </ng-template>
             </p-pickList>
         </div>
+        <div class="row g-3" style="padding-top: 2rem">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Image of your recipe</label>
+                <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">
+            </div>
+        </div>
         <p-button style="padding-top: 3rem" type="submit" styleClass="p-button-help p-button-rounded" label="Add recipe"></p-button>
     </form>
 </div>

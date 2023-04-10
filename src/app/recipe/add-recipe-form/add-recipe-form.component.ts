@@ -26,6 +26,7 @@ export class AddRecipeFormComponent implements OnInit {
   sourceIngredients= [] as Ingredient[];
   targetIngredients = [] as Ingredient[];
   ingredientsCount = [] as IngredientWithCount[];
+  recipeImage = {} as File;
   ngOnInit(): void {
     this.ingredientService.getIngredients().subscribe(data => {
       this.sourceIngredients = data;
@@ -46,5 +47,9 @@ export class AddRecipeFormComponent implements OnInit {
       return;
     }
     item.count = event;
+  }
+
+  onFileSelected(event: any) {
+    this.recipeImage = event.target.files[0];
   }
 }
