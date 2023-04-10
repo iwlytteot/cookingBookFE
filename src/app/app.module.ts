@@ -17,6 +17,9 @@ import {TableModule} from 'primeng/table';
 import {DividerModule} from 'primeng/divider';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import {ChipsModule} from 'primeng/chips';
+import {PickListModule} from 'primeng/picklist';
+import {DialogModule} from 'primeng/dialog';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AddRecipeFormComponent} from './recipe/add-recipe-form/add-recipe-form.component';
@@ -44,7 +47,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     NgbModule,
     InputTextModule,
     ReactiveFormsModule,
-    ButtonModule
+    ButtonModule,
+    ChipsModule,
+    PickListModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

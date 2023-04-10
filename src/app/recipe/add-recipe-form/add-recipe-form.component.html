@@ -1,7 +1,51 @@
-<form [formGroup]="formGroup" (ngSubmit)="createRecipe()">
-    <div class="form-group">
-        <label for="nameOfRecipe">Name of recipe</label>
-        <input type="text" pInputText formControlName="name" class="form-control" id="nameOfRecipe" aria-describedby="recipeName" placeholder="Name of recipe">
-    </div>
-    <p-button type="submit" styleClass="p-button-help p-button-rounded" label="Add recipe"></p-button>
-</form>
+<div class="container" style="width: 70%">
+    <form [formGroup]="formGroup" (ngSubmit)="createRecipe()">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="name">Name of recipe</label>
+                <input type="text" pInputText formControlName="name" class="form-control" id="name" aria-describedby="name" placeholder="Name of recipe">
+            </div>
+            <div class="col-md-6">
+                <label for="description">Short description</label>
+                <input type="text" pInputText formControlName="description" class="form-control" id="description" aria-describedby="description" placeholder="Short description">
+            </div>
+        </div>
+        <div class="row g-3" style="padding-top: 2rem">
+            <div class="col-md-1">
+                <label for="portion" class="form-label">Portions</label>
+                <input type="number" pInputText formControlName="portion" class="form-control" id="portion" aria-describedby="portion">
+            </div>
+            <div class="col-md-2">
+                <label for="baseEstimate" class="form-label">Time estimate</label>
+                <input type="text" pInputText formControlName="baseTimeEstimate" class="form-control" id="baseEstimate" aria-describedby="baseTimeEstimate" placeholder="1h 30m">
+            </div>
+            <div class="col-md-2">
+                <label for="additionalEstimate" class="form-label">Additional estimate</label>
+                <input type="text" pInputText formControlName="additionalEstimate" class="form-control" id="additionalEstimate" aria-describedby="additionalEstimate" placeholder="15m">
+            </div>
+        </div>
+        <div class="row g-3" style="padding-top: 2rem">
+            <label class="form-label">Instructions (press enter to add more instructions)</label>
+            <p-chips [style]="{'display': 'inline'}" placeholder="Enter to insert new instruction" formControlName="instructions" id="instructions"></p-chips>
+        </div>
+        <div class="row g-3" style="padding-top: 2rem">
+
+            <p-pickList [source]="sourceIngredients" [target]="targetIngredients" sourceHeader="Available" targetHeader="Selected" [dragdrop]="true" [responsive]="true"
+                        [sourceStyle]="{ height: '15rem' }" [targetStyle]="{ height: '15rem' }" filterBy="name"
+                        [showSourceControls]="false" [showTargetControls]="false">
+                <ng-template let-ingredient pTemplate="item">
+                    <div class="flex flex-wrap p-2 align-items-center gap-3">
+                        <div class="flex-1 flex flex-column gap-2">
+                            <span class="font-bold">{{ ingredient.name }} ({{ingredient.weight}}g)</span>
+                        </div>
+                        <span class="font-bold text-900">
+                            <input (change)="saveIngredientCount(ingredient, $event)" type="number" pInputText
+                                   formControlName="count" class="form-control" aria-describedby="portion" placeholder="Count">
+                        </span>
+                    </div>
+                </ng-template>
+            </p-pickList>
+        </div>
+        <p-button style="padding-top: 3rem" type="submit" styleClass="p-button-help p-button-rounded" label="Add recipe"></p-button>
+    </form>
+</div>
