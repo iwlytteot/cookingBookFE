@@ -25,4 +25,10 @@ export class RecipeServiceComponent {
     return this.http.get<IngredientWithCount[]>(`http://localhost:8080/recipe/${recipeId}/ingredient`);
   }
 
+  uploadImage(recipeId: number, image: File) {
+    let formData = new FormData();
+    formData.append('img', image);
+
+    return this.http.post(`http://localhost:8080/recipe/${recipeId}/image`, formData);
+  }
 }
