@@ -15,8 +15,6 @@ export class RecipeServiceComponent {
 
   constructor(private http: HttpClient) {}
 
-  recipes = {} as Recipe[];
-
   getRecipes() {
     return this.http.get<Recipe[]>('http://localhost:8080/recipe');
   }
@@ -29,6 +27,10 @@ export class RecipeServiceComponent {
     let formData = new FormData();
     formData.append('img', image);
 
-    return this.http.post(`http://localhost:8080/recipe/${recipeId}/image`, formData);
+    return this.http.post(`http://localhost:8080/recipe/${recipeId}/image`, formData).subscribe();
+  }
+
+  addRecipe(recipe: Recipe) {
+    return this.http.post<number>("http://localhost:8080/recipe", recipe);
   }
 }
