@@ -1,3 +1,5 @@
+import {IngredientWithCount} from "./ingredientWithCount";
+
 export interface Recipe {
   id: number;
   name: string;
@@ -7,4 +9,5 @@ export interface Recipe {
   createTime: string;
   imageId: string;
   instructions: string[];
+  ingredients: IngredientWithCount[];
 }
