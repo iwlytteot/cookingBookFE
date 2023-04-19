@@ -1,6 +1,7 @@
 import {Component, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Ingredient} from "../model/ingredient";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,6 @@ export class IngredientServiceComponent {
   constructor(private http: HttpClient) {}
 
   getIngredients() {
-    return this.http.get<Ingredient[]>('http://localhost:8080/ingredient');
+    return this.http.get<Ingredient[]>(`${environment.apiUrl}/ingredient`);
   }
 }
