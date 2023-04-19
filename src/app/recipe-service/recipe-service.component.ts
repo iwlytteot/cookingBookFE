@@ -21,7 +21,7 @@ export class RecipeServiceComponent {
   }
 
   getRecipeIngredients(recipeId: number) {
-    return this.http.get<IngredientWithCount[]>(`${environment.apiUrl}/${recipeId}/ingredient`);
+    return this.http.get<IngredientWithCount[]>(`${environment.apiUrl}/recipe/${recipeId}/ingredient`);
   }
 
   uploadImage(recipeId: number, image: File) {
