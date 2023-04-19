@@ -1,6 +1,6 @@
 <p-dataView #dv [value]="recipes" [paginator]="true" [rows]="9" layout="grid">
   <ng-template let-product pTemplate="gridItem">
-    <div class="col-12 md:col-4">
+    <div class="col-12 md:col-3">
       <div class="product-grid-item card" (click)="showInstructions(product)">
         <div class="product-grid-item-top">
           <div>
@@ -9,7 +9,7 @@
           </div>
         </div>
         <div class="product-grid-item-content">
-          <img [src]="'https://drive.google.com/uc?id=' + product.imageId" [alt]="product.name"/>
+          <img [src]="'https://drive.google.com/uc?id=' + product.imageId" [alt]="product.name" width="100px" height="150px"/>
           <div class="product-name">{{product.name}}</div>
           <div class="product-description">{{product.description}}</div>
         </div>
