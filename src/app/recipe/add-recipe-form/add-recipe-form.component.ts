@@ -24,7 +24,6 @@ export class AddRecipeFormComponent implements OnInit {
     instructions: new FormControl([], Validators.required),
     count: new FormControl('')
   });
-
   sourceIngredients= [] as Ingredient[];
   targetIngredients = [] as Ingredient[];
   ingredientsCount = [] as IngredientWithCount[];

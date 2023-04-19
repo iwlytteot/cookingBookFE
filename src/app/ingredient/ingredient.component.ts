@@ -13,8 +13,7 @@ export class IngredientComponent {
   constructor(private ingredientService: IngredientServiceComponent) {}
 
   formGroup: FormGroup = new FormGroup({
-    name: new FormControl('', Validators.required),
-    weight: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required)
   });
 
   createIngredient() {
@@ -26,7 +25,6 @@ export class IngredientComponent {
     }
     let ingredient = {} as Ingredient;
     ingredient.name = this.formGroup.controls['name'].value;
-    ingredient.weight = this.formGroup.controls['weight'].value;
     this.ingredientService.addIngredient(ingredient);
     location.reload();
   }

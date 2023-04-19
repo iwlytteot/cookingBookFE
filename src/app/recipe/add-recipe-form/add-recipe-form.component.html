@@ -36,9 +36,9 @@
                 <ng-template let-ingredient pTemplate="item">
                     <div class="flex flex-wrap p-2 align-items-center gap-3">
                         <div class="flex-1 flex flex-column gap-2">
-                            <span class="font-bold">{{ ingredient.name }} ({{ingredient.weight}}g)</span>
+                            <span class="font-bold">{{ ingredient.name }}</span>
                         </div>
-                        <span class="font-bold text-900">
+                        <span class="font-bold text-500" style="width:150px">
                             <input (change)="saveIngredientCount(ingredient, $event)" type="number" pInputText
                                    formControlName="count" class="form-control" aria-describedby="portion" placeholder="Count">
                         </span>
