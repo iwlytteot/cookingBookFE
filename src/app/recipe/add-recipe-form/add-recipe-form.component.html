@@ -1,4 +1,4 @@
-<div class="container" style="width: 70%">
+<div class="container form-recipe" style="width: 70%">
     <form [formGroup]="formGroup" (ngSubmit)="createRecipe()">
         <div class="row g-3">
             <div class="col-md-6">
@@ -52,6 +52,6 @@
                 <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">
             </div>
         </div>
-        <p-button style="padding-top: 3rem" type="submit" styleClass="p-button-help p-button-rounded" label="Add recipe"></p-button>
+        <p-button type="submit" styleClass="p-button-help p-button-rounded" label="Add recipe"></p-button>
     </form>
 </div>
