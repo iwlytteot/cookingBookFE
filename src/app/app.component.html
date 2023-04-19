@@ -1,4 +1,4 @@
-<ul ngbNav #nav="ngbNav" class="nav-tabs" [destroyOnHide]="false" [activeId]="2">
+<ul ngbNav #nav="ngbNav" class="nav-tabs" [destroyOnHide]="false" [activeId]="3">
     <li [ngbNavItem]="1">
         <a ngbNavLink>Add new recipe</a>
         <ng-template ngbNavContent>
@@ -6,6 +6,12 @@
         </ng-template>
     </li>
     <li [ngbNavItem]="2">
+        <a ngbNavLink>Add new ingredient</a>
+        <ng-template ngbNavContent>
+            <app-ingredient></app-ingredient>
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
         <a ngbNavLink>See all recipes</a>
         <ng-template ngbNavContent>
             <app-recipe></app-recipe>

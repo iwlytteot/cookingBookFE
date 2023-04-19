@@ -1,0 +1,15 @@
+<div class="container form-recipe" style="width: 70%">
+    <form [formGroup]="formGroup" (ngSubmit)="createIngredient()">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="name">Name of ingredient</label>
+                <input type="text" pInputText formControlName="name" class="form-control" id="name" aria-describedby="name" placeholder="Name of ingredient">
+            </div>
+            <div class="col-md-6">
+                <label for="description">Weight of ingredient (g)</label>
+                <input type="number" pInputText formControlName="weight" class="form-control" id="description" aria-describedby="description" placeholder="Weight of ingredient">
+            </div>
+        </div>
+        <p-button type="submit" styleClass="p-button-help p-button-rounded" label="Add ingredient"></p-button>
+    </form>
+</div>

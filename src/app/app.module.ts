@@ -24,6 +24,7 @@ import {DialogModule} from 'primeng/dialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AddRecipeFormComponent} from './recipe/add-recipe-form/add-recipe-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { IngredientComponent } from './ingredient/ingredient.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     IngredientServiceComponent,
     RecipeComponent,
     RecipeInstructionsComponent,
-    AddRecipeFormComponent
+    AddRecipeFormComponent,
+    IngredientComponent
   ],
   imports: [
     BrowserModule,
