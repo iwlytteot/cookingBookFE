@@ -18,4 +18,8 @@ export class IngredientServiceComponent {
   getIngredients() {
     return this.http.get<Ingredient[]>(`${environment.apiUrl}/ingredient`);
   }
+
+  addIngredient(ingredient: Ingredient) {
+    this.http.post(`${environment.apiUrl}/ingredient`, ingredient).subscribe();
+  }
 }
