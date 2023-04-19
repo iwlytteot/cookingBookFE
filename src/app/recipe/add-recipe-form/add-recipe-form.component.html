@@ -29,22 +29,40 @@
             <p-chips [style]="{'display': 'inline'}" placeholder="Enter to insert new instruction" formControlName="instructions" id="instructions"></p-chips>
         </div>
         <div class="row g-3" style="padding-top: 2rem">
+            <div class="container">
+                Available ingredients
+                <div
+                        cdkDropList
+                        #todoList="cdkDropList"
+                        [cdkDropListData]="sourceIngredients"
+                        [cdkDropListConnectedTo]="[doneList]"
+                        class="list"
+                        (cdkDropListDropped)="drop($event)">
+                    <div class="box" *ngFor="let item of sourceIngredients" cdkDrag>{{item.name}}</div>
+                </div>
+            </div>
 
-            <p-pickList [source]="sourceIngredients" [target]="targetIngredients" sourceHeader="Available" targetHeader="Selected" [dragdrop]="true" [responsive]="true"
-                        [sourceStyle]="{ height: '15rem' }" [targetStyle]="{ height: '15rem' }" filterBy="name"
-                        [showSourceControls]="false" [showTargetControls]="false">
-                <ng-template let-ingredient pTemplate="item">
-                    <div class="flex flex-wrap p-2 align-items-center gap-3">
-                        <div class="flex-1 flex flex-column gap-2">
-                            <span class="font-bold">{{ ingredient.name }}</span>
-                        </div>
-                        <span class="font-bold text-500" style="width:150px">
-                            <input (change)="saveIngredientCount(ingredient, $event)" type="number" pInputText
-                                   formControlName="count" class="form-control" aria-describedby="portion" placeholder="Count">
-                        </span>
+            <div class="container">
+                Selected ingredients
+                <div
+                        cdkDropList
+                        cdkDropListSortingDisabled
+                        #doneList="cdkDropList"
+                        [cdkDropListData]="targetIngredients"
+                        [cdkDropListConnectedTo]="[todoList]"
+                        class="list"
+                        (cdkDropListDropped)="drop($event)">
+                    <div class="box" *ngFor="let item of targetIngredients" cdkDrag>
+                        {{item.name}}
+                        <input type="text" (change)="saveIngredientCount(item, $event)"/>
+                        <select (change)="saveIngredientUnit(item, $event)">
+                            <option *ngFor="let x of units | keyvalue">
+                                {{x.key}}
+                            </option>
+                        </select>
                     </div>
-                </ng-template>
-            </p-pickList>
+                </div>
+            </div>
         </div>
         <div class="row g-3" style="padding-top: 2rem">
             <div class="mb-3">
@@ -54,4 +72,7 @@
         </div>
         <p-button type="submit" styleClass="p-button-help p-button-rounded" label="Add recipe"></p-button>
     </form>
+
+
+
 </div>

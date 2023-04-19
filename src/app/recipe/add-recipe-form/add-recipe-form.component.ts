@@ -5,6 +5,8 @@ import {Ingredient} from "../../model/ingredient";
 import {IngredientWithCount} from "../../model/ingredientWithCount";
 import {Recipe} from "../../model/recipe";
 import {RecipeServiceComponent} from "../../recipe-service/recipe-service.component";
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
+import {Unit} from "../../model/unit";
 
 @Component({
   selector: 'app-add-recipe-form',
@@ -28,6 +30,7 @@ export class AddRecipeFormComponent implements OnInit {
   targetIngredients = [] as Ingredient[];
   ingredientsCount = [] as IngredientWithCount[];
   recipeImage = {} as File;
+  units = Unit;
   ngOnInit(): void {
     this.ingredientService.getIngredients().subscribe(data => {
       this.sourceIngredients = data;
@@ -35,6 +38,7 @@ export class AddRecipeFormComponent implements OnInit {
         let ingredientWithCount = {} as IngredientWithCount;
         ingredientWithCount.ingredient = x;
         ingredientWithCount.count = 0;
+        ingredientWithCount.unit = Unit.g;
         this.ingredientsCount.push(ingredientWithCount);
       })
     })
@@ -84,7 +88,29 @@ export class AddRecipeFormComponent implements OnInit {
     item.count = event.target.value;
   }
 
+  saveIngredientUnit(ingredient: Ingredient, event: any) {
+    let item = this.ingredientsCount.find(e => e.ingredient === ingredient);
+    if (item === undefined) {
+      return;
+    }
+    console.log(event.target.value);
+    item.unit = event.target.value;
+  }
+
   onFileSelected(event: any) {
     this.recipeImage = event.target.files[0];
+  }
+
+  drop(event: CdkDragDrop<Ingredient[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex,
+      );
+    }
   }
 }
