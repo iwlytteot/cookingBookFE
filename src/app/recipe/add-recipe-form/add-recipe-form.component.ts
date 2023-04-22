@@ -24,7 +24,8 @@ export class AddRecipeFormComponent implements OnInit {
     baseTimeEstimate: new FormControl('', Validators.required),
     additionalEstimate: new FormControl('', Validators.required),
     instructions: new FormControl([], Validators.required),
-    count: new FormControl('')
+    count: new FormControl(''),
+    hamiMeter: new FormControl(1, Validators.required)
   });
   sourceIngredients= [] as Ingredient[];
   targetIngredients = [] as Ingredient[];

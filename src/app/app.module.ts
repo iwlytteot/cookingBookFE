@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import {ButtonModule} from 'primeng/button';
 import {ChipsModule} from 'primeng/chips';
 import {PickListModule} from 'primeng/picklist';
 import {DialogModule} from 'primeng/dialog';
+import {RatingModule} from 'primeng/rating';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AddRecipeFormComponent} from './recipe/add-recipe-form/add-recipe-form.component';
@@ -54,7 +56,9 @@ import { IngredientComponent } from './ingredient/ingredient.component';
     ChipsModule,
     PickListModule,
     DialogModule,
-    DragDropModule
+    DragDropModule,
+    RatingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

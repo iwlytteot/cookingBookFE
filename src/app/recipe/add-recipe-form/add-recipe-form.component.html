@@ -15,13 +15,21 @@
                 <label for="portion" class="form-label">Portions</label>
                 <input type="number" pInputText formControlName="portion" class="form-control" id="portion" aria-describedby="portion">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label for="baseEstimate" class="form-label">Time estimate</label>
                 <input type="text" pInputText formControlName="baseTimeEstimate" class="form-control" id="baseEstimate" aria-describedby="baseTimeEstimate" placeholder="1h 30m">
             </div>
             <div class="col-md-2">
                 <label for="additionalEstimate" class="form-label">Additional estimate</label>
                 <input type="text" pInputText formControlName="additionalEstimate" class="form-control" id="additionalEstimate" aria-describedby="additionalEstimate" placeholder="15m">
+            </div>
+            <div class="col-md-6">
+                <div style="text-align: center">
+                <label for="additionalEstimate" class="form-label">Hami meter</label>
+                <div style="padding-top: 5px">
+                    <p-rating [iconOnStyle]="{'color' : '#f995a7'}" [iconOffStyle]="{'color' : '#f995a7'}" [cancel]="false" formControlName="hamiMeter"></p-rating>
+                </div>
+                </div>
             </div>
         </div>
         <div class="row g-3" style="padding-top: 2rem">

@@ -2,6 +2,11 @@
     <img [src]="'https://drive.google.com/uc?id=' + recipe.imageId" [alt]="recipe.name"/>
 </div>
 
+<div style="padding-bottom: 10px; text-align: center">
+    <p-rating [(ngModel)]="recipe.hamiMeter" [readonly]="true" [cancel]="false"
+              [iconOnStyle]="{'color' : '#f995a7'}" [iconOffStyle]="{'color' : '#f995a7'}"></p-rating>
+</div>
+
 <p-divider align="center">
     <span class="p-tag p-tag-warning">Ingredients</span>
 </p-divider>

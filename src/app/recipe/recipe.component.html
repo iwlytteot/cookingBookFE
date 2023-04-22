@@ -6,7 +6,11 @@
           <div>
             <i class="pi pi-user product-category-icon"></i>
             <span class="product-category">{{product.portion}}</span>
-          </div>
+            </div>
+            <div style="float:right">
+              <p-rating [(ngModel)]="product.hamiMeter" [readonly]="true" [cancel]="false"
+                        [iconOnStyle]="{'color' : '#f995a7'}" [iconOffStyle]="{'color' : '#f995a7'}"></p-rating>
+            </div>
         </div>
         <div class="product-grid-item-content">
           <img [src]="'https://drive.google.com/uc?id=' + product.imageId" [alt]="product.name" width="100px" height="150px"/>
