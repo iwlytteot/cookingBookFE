@@ -10,4 +10,5 @@ export interface Recipe {
   imageId: string;
   instructions: string[];
   ingredients: IngredientWithCount[];
+  hamiMeter: number;
 }
